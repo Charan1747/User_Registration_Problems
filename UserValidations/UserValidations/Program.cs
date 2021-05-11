@@ -7,19 +7,19 @@ namespace UserValidations
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter First Name :");
-            String first_name = (Console.ReadLine());
-            if (first_name.Length >= 3)
+            Console.WriteLine("Enter Last Name :");
+            String last_name = (Console.ReadLine());
+            if (last_name.Length >= 3)
             { 
                 Regex reg = new Regex(@"^[A-Z]");
-                Match match = reg.Match(first_name);
+                Match match = reg.Match(last_name);
                 if(match.Success)
-                    Console.WriteLine("Valid User Name");
+                    Console.WriteLine("Valid Last Name");
                 else
-                    Console.WriteLine("Invalid User Name");
+                    Console.WriteLine("Invalid Last Name");
             }
             else
-                Console.WriteLine("Invalid User Name");
+                Console.WriteLine("Invalid Last Name");
         }
     }
 }
