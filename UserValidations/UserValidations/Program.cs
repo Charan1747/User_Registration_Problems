@@ -3,23 +3,24 @@ using System.Text.RegularExpressions;
 
 namespace UserValidations
 {
-    class Program
+    class ValidEmail
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter Last Name :");
-            String last_name = (Console.ReadLine());
-            if (last_name.Length >= 3)
+            Console.WriteLine("Enter a Email :");
+            String email = (Console.ReadLine());
+            if (email.Length >= 3)
             { 
-                Regex reg = new Regex(@"^[A-Z]");
-                Match match = reg.Match(last_name);
+                Regex reg = new Regex("^[a-z+0-9+.]+@[a-z.]+[a-z]+$");
+                Match match = reg.Match(email);
                 if(match.Success)
-                    Console.WriteLine("Valid Last Name");
+                    Console.WriteLine("" +email + " is" + " Valid E-mail");
                 else
-                    Console.WriteLine("Invalid Last Name");
+                    Console.WriteLine(""+email+ " is" + " Invalid Email");
             }
             else
-                Console.WriteLine("Invalid Last Name");
+                Console.WriteLine(""+email+ " is" + " Invalid Email");
         }
     }
 }
+ 
